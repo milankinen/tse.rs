@@ -1,10 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import React from "react";
+import PropTypes from "prop-types";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 
-import SEO from './SEO'
-import theme from '../../config/theme'
-import useBuildTime from '../hooks/useBuildTime'
+import SEO from "./SEO";
+import theme from "../../config/theme";
+import useBuildTime from "../hooks/useBuildTime";
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -184,7 +185,7 @@ const GlobalStyle = createGlobalStyle`
   [hidden] {
     display: none !important;
   }
-`
+`;
 
 const Footer = styled.footer`
   text-align: center;
@@ -192,10 +193,18 @@ const Footer = styled.footer`
   span {
     font-size: 0.75rem;
   }
-`
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+`;
+
+const Separator = styled.span`
+  padding: 0 1rem;
+`;
 
 const Layout = ({ children, customSEO }) => {
-  const buildTime = useBuildTime()
+  const buildTime = useBuildTime();
 
   return (
     <ThemeProvider theme={theme}>
@@ -204,22 +213,33 @@ const Layout = ({ children, customSEO }) => {
         <GlobalStyle />
         {children}
         <Footer>
-          &copy; 2019 by John Doe. All rights reserved. <br />
-          <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
-          <span>Last build: {buildTime}</span>
+          <a href="https://github.com/milankinen" alt="Matti in GitHub">
+            <FaGithub />
+          </a>
+          <Separator>•</Separator>
+          <a href="https://twitter.com/milankinen" alt="Matti in Twitter">
+            <FaTwitter />
+          </a>
+          <Separator>•</Separator>
+          <a
+            href="https://fi.linkedin.com/in/matti-lankinen-92086a4a"
+            alt="Matti in LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
         </Footer>
       </>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
-  customSEO: PropTypes.bool,
-}
+  customSEO: PropTypes.bool
+};
 
 Layout.defaultProps = {
-  customSEO: false,
-}
+  customSEO: false
+};
