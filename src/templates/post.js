@@ -51,6 +51,10 @@ const PostContent = styled.div`
   a.anchor > svg {
     display: none;
   }
+  img[src$=".gif"] {
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 const Post = ({
