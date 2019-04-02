@@ -1,8 +1,9 @@
 {
-  "name": "gatsby-starter-minimal-blog",
-  "description": "Typography driven blog, focus on the content & minimal style. Powered by MDX. Live Preview with react-live.",
+  "name": "tse.rs",
+  "private": true,
+  "description": "Sources of tse.rs",
   "version": "3.0.0",
-  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
+  "author": "Matti Lankinen <m.lankinen@iki.fi>",
   "dependencies": {
     "@mdx-js/mdx": "^0.20.3",
     "@mdx-js/tag": "^0.20.3",
@@ -40,7 +41,8 @@
   "keywords": [
     "gatsby",
     "gatsby-starter",
-    "lekoarts"
+    "lekoarts",
+    "blog"
   ],
   "license": "MIT",
   "main": "n/a",
