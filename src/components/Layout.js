@@ -29,16 +29,13 @@ const GlobalStyle = createGlobalStyle`
       font-size: 3.052rem;
     }
     h2 {
-      font-size: 2.441rem;
+      font-size: 2rem;
     }
     h3 {
-      font-size: 1.953rem;
+      font-size: 1.75rem;
     }
     h4 {
-      font-size: 1.563rem;
-    }
-    h5 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
     @media (max-width: ${props => props.theme.breakpoints.phone}) {
       font-size: 16px;
@@ -46,16 +43,13 @@ const GlobalStyle = createGlobalStyle`
         font-size: 2.488rem;
       }
       h2 {
-        font-size: 2.074rem;
+        font-size: 2rem;
       }
       h3 {
-        font-size: 1.728rem;
+        font-size: 1.75rem;
       }
       h4 {
-        font-size: 1.444rem;
-      }
-      h5 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -184,6 +178,13 @@ const GlobalStyle = createGlobalStyle`
   }
   [hidden] {
     display: none !important;
+  }
+
+  .imglabel {
+    display: block;
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    text-align: center;
   }
 `;
 

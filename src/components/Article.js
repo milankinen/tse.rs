@@ -30,8 +30,8 @@ const Title = styled.h3`
 
 const Initiale = styled.span`
   position: absolute;
-  font-size: 3rem;
-  transform: translate(-50%, -30%);
+  font-size: 2.8rem;
+  transform: translate(-40%, -40%);
   opacity: 0.08;
   user-select: none;
   z-index: -1;
@@ -53,13 +53,7 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
         <Link to={slug}>{title}</Link>
       </Title>
       <Subline>
-        {date} &mdash; {timeToRead} Min Read &mdash; In{" "}
-        {categories.map((cat, i) => (
-          <React.Fragment key={cat}>
-            {!!i && ", "}
-            <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
-          </React.Fragment>
-        ))}
+        {date} &mdash; {timeToRead} min read
       </Subline>
       <Excerpt>{excerpt}</Excerpt>
     </Post>

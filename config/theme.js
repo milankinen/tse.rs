@@ -38,7 +38,7 @@ const theme = {
   breakpoints,
   fontFamily,
   maxWidth: "800px",
-  baseFontSize: "18px"
+  baseFontSize: "16px"
 };
 
 export default theme;
