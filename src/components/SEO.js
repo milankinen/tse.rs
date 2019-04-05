@@ -9,19 +9,20 @@ const SEO = props => {
 
   let title;
   let description;
+  let image = `${homeURL}${config.siteBanner}`;
 
-  const coverImage = postNode.frontmatter.cover_image;
   const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
   const homeURL = `${config.siteUrl}${realPrefix}`;
   const URL = `${homeURL}${postPath || ""}`;
-  const image = `${homeURL}${
-    coverImage ? coverImage.childImageSharp.fluid.src : config.siteBanner
-  }`;
 
   if (article) {
     const postMeta = postNode.frontmatter;
     title = `${postMeta.title} | ${config.siteTitle}`;
     description = postMeta.summary;
+    const coverImage = postMeta.cover_image;
+    if (coverImage) {
+      image = `${homeURL}${coverImage.childImageSharp.fluid.src}`;
+    }
   } else {
     title = config.siteTitleAlt;
     description = config.siteDescription;
