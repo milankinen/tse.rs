@@ -214,16 +214,25 @@ const Layout = ({ children, customSEO }) => {
         <GlobalStyle />
         {children}
         <Footer>
-          <a href="https://github.com/milankinen" alt="Matti in GitHub">
+          <a
+            href="https://github.com/milankinen"
+            alt="Matti in GitHub"
+            target="_blank"
+          >
             <FaGithub />
           </a>
           <Separator>•</Separator>
-          <a href="https://twitter.com/milankinen" alt="Matti in Twitter">
+          <a
+            href="https://twitter.com/milankinen"
+            alt="Matti in Twitter"
+            target="_blank"
+          >
             <FaTwitter />
           </a>
           <Separator>•</Separator>
           <a
             href="https://fi.linkedin.com/in/matti-lankinen-92086a4a"
+            target="_blank"
             alt="Matti in LinkedIn"
           >
             <FaLinkedin />

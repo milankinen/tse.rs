@@ -24,7 +24,10 @@ const Bio = () => (
     <div>
       <div>Getting shit done.</div>
       <div>
-        Blog by <a href="https://twitter.com/milankinen">Matti Lankinen</a>
+        Blog by{" "}
+        <a href="https://twitter.com/milankinen" target="_blank">
+          Matti Lankinen
+        </a>
       </div>
     </div>
   </Wrapper>
