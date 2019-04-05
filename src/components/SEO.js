@@ -10,10 +10,13 @@ const SEO = props => {
   let title;
   let description;
 
+  const coverImage = postNode.frontmatter.cover_image;
   const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
   const homeURL = `${config.siteUrl}${realPrefix}`;
   const URL = `${homeURL}${postPath || ""}`;
-  const image = `${homeURL}${config.siteBanner}`;
+  const image = `${homeURL}${
+    coverImage ? coverImage.childImageSharp.fluid.src : config.siteBanner
+  }`;
 
   if (article) {
     const postMeta = postNode.frontmatter;

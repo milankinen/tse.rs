@@ -115,6 +115,14 @@ export const postQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         summary
+        cover_image {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 1024) {
+              src
+            }
+          }
+        }
       }
       timeToRead
       parent {
