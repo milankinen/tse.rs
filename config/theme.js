@@ -1,8 +1,8 @@
 import { lighten } from "polished";
 
 const colors = {
-  primary: "#1b5e20",
-  primaryLight: "#4c8c4a",
+  primary: "#303F9F",
+  primaryLight: "#3949AB",
   bg: "white",
   grey: {
     dark: "rgba(0, 0, 0, 0.9)",

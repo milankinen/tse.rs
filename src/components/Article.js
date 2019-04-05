@@ -43,7 +43,7 @@ const Excerpt = styled.p`
   margin-bottom: 1rem;
 `;
 
-const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
+const Article = ({ title, date, excerpt, summary, slug, timeToRead }) => {
   const firstChar = title.charAt(0);
 
   return (
@@ -55,7 +55,7 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
       <Subline>
         {date} &mdash; {timeToRead} min read
       </Subline>
-      <Excerpt>{excerpt}</Excerpt>
+      <Excerpt>{summary}</Excerpt>
     </Post>
   );
 };
@@ -68,5 +68,5 @@ Article.propTypes = {
   excerpt: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   timeToRead: PropTypes.number.isRequired,
-  categories: PropTypes.array.isRequired
+  summary: PropTypes.string.isRequired
 };

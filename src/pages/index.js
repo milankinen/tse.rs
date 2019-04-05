@@ -21,7 +21,7 @@ const Content = styled.div`
 
 const Hero = styled.div`
   grid-column: 2;
-  padding: 1rem 2rem 3rem 2rem;
+  padding: 0 2rem 3rem 2rem;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   color: ${props => props.theme.colors.grey.dark};
 
@@ -58,9 +58,9 @@ const IndexPage = ({
             title={post.node.frontmatter.title}
             date={post.node.frontmatter.date}
             excerpt={post.node.excerpt}
+            summary={post.node.frontmatter.summary}
             timeToRead={post.node.timeToRead * 2}
             slug={post.node.fields.slug}
-            categories={post.node.frontmatter.categories}
             key={post.node.fields.slug}
           />
         ))}
@@ -90,7 +90,7 @@ export const IndexQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            categories
+            summary
           }
           excerpt(pruneLength: 200)
           timeToRead

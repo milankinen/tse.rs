@@ -8,12 +8,6 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 const Colors = styled.div`
-  /**
- * atom-dark theme
- * Based on Atom's  theme: https://github.com/atom/atom-dark-syntax
- * @author Joe Gibson (@gibsjose)
- */
-
   .prism-code {
     font-size: 14px !important;
   }
@@ -21,19 +15,19 @@ const Colors = styled.div`
   .token-line {
     min-height: 21px;
   }
-
   code[class*="language-"],
   pre[class*="language-"] {
-    color: #c5c8c6;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier,
-      monospace;
+    font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+      "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+      "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+      "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.375;
     direction: ltr;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
-    line-height: 1.5;
 
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -43,6 +37,24 @@ const Colors = styled.div`
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+    background: #faf8f5;
+    color: #728fcb;
+  }
+
+  pre[class*="language-"]::-moz-selection,
+  pre[class*="language-"] ::-moz-selection,
+  code[class*="language-"]::-moz-selection,
+  code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background: #faf8f5;
+  }
+
+  pre[class*="language-"]::selection,
+  pre[class*="language-"] ::selection,
+  code[class*="language-"]::selection,
+  code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #faf8f5;
   }
 
   /* Code blocks */
@@ -50,12 +62,6 @@ const Colors = styled.div`
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
-    border-radius: 0.3em;
-  }
-
-  :not(pre) > code[class*="language-"],
-  pre[class*="language-"] {
-    background: #1d1f21;
   }
 
   /* Inline code */
@@ -68,100 +74,121 @@ const Colors = styled.div`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: #7c7c7c;
+    color: #b6ad9a;
   }
 
   .token.punctuation {
-    color: #c5c8c6;
+    color: #b6ad9a;
   }
 
-  .namespace {
+  .token.namespace {
     opacity: 0.7;
   }
 
-  .token.property,
-  .token.keyword,
-  .token.tag {
-    color: #96cbfe;
-  }
-
-  .token.class-name {
-    color: #ffffb6;
-    text-decoration: underline;
-  }
-
-  .token.boolean,
-  .token.constant {
-    color: #99cc99;
-  }
-
-  .token.symbol,
-  .token.deleted {
-    color: #f92672;
-  }
-
+  .token.tag,
+  .token.operator,
   .token.number {
-    color: #ff73fd;
+    color: #063289;
   }
 
-  .token.selector,
-  .token.attr-name,
-  .token.string,
-  .token.char,
-  .token.builtin,
-  .token.inserted {
-    color: #a8ff60;
-  }
-
-  .token.variable {
-    color: #c6c5fe;
-  }
-
-  .token.operator {
-    color: #ededed;
-  }
-
-  .token.entity {
-    color: #ffffb6;
-    /* text-decoration: underline; */
-  }
-
-  .token.url {
-    color: #96cbfe;
-  }
-
-  .language-css .token.string,
-  .style .token.string {
-    color: #87c38a;
-  }
-
-  .token.atrule,
-  .token.attr-value {
-    color: #f9ee98;
-  }
-
+  .token.property,
   .token.function {
-    color: #dad085;
+    color: #b29762;
   }
 
-  .token.regex {
-    color: #e9c062;
+  .token.tag-id,
+  .token.selector,
+  .token.atrule-id {
+    color: #2d2006;
   }
 
-  .token.important {
-    color: #fd971f;
+  code.language-javascript,
+  .token.attr-name {
+    color: #896724;
+  }
+
+  code.language-css,
+  code.language-scss,
+  .token.boolean,
+  .token.string,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .language-scss .token.string,
+  .style .token.string,
+  .token.attr-value,
+  .token.keyword,
+  .token.control,
+  .token.directive,
+  .token.unit,
+  .token.statement,
+  .token.regex,
+  .token.atrule {
+    color: #728fcb;
+  }
+
+  .token.placeholder,
+  .token.variable {
+    color: #93abdc;
+  }
+
+  .token.deleted {
+    text-decoration: line-through;
+  }
+
+  .token.inserted {
+    border-bottom: 1px dotted #2d2006;
+    text-decoration: none;
+  }
+
+  .token.italic {
+    font-style: italic;
   }
 
   .token.important,
   .token.bold {
     font-weight: bold;
   }
-  .token.italic {
-    font-style: italic;
+
+  .token.important {
+    color: #896724;
   }
 
   .token.entity {
     cursor: help;
+  }
+
+  pre > code.highlight {
+    outline: 0.4em solid #896724;
+    outline-offset: 0.4em;
+  }
+
+  /* overrides color-values for the Line Numbers plugin
+   * http://prismjs.com/plugins/line-numbers/
+   */
+  .line-numbers .line-numbers-rows {
+    border-right-color: #ece8de;
+  }
+
+  .line-numbers-rows > span:before {
+    color: #cdc4b1;
+  }
+
+  /* overrides color-values for the Line Highlight plugin
+   * http://prismjs.com/plugins/line-highlight/
+   */
+  .line-highlight {
+    background: rgba(45, 32, 6, 0.2);
+    background: -webkit-linear-gradient(
+      left,
+      rgba(45, 32, 6, 0.2) 70%,
+      rgba(45, 32, 6, 0)
+    );
+    background: linear-gradient(
+      to right,
+      rgba(45, 32, 6, 0.2) 70%,
+      rgba(45, 32, 6, 0)
+    );
   }
 `;
 

@@ -8,16 +8,15 @@ module.exports = {
   siteHeadline: "Getting shit done",
   siteBanner: "/social/banner.jpg",
   favicon: "src/favicon.png",
-  siteDescription:
-    "Minimal Blog with a focus on typography. Gatsby Starter powered by MDX.",
+  siteDescription: "Some polyglot ideas and opinions about coding",
   author: "Matti Lankinen",
   siteLogo: "/social/logo.png",
 
   userTwitter: "@milankinen",
   ogSiteName: "tsers",
   ogLanguage: "en_US",
-  googleAnalyticsID: "UA-47519312-6",
+  googleAnalyticsID: "UA-137800560-1",
 
-  themeColor: "#3498DB",
-  backgroundColor: "#2b2e3c"
+  themeColor: "#303F9F",
+  backgroundColor: "#303F9F"
 };

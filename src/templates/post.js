@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
-import kebabCase from "lodash/kebabCase";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
 import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from "../components";
@@ -115,7 +114,7 @@ export const postQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        categories
+        summary
       }
       timeToRead
       parent {
