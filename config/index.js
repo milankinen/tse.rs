@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: "/",
   siteTitle: "tsers",
-  siteTitleAlt: "Getting shit done",
+  siteTitleAlt: "Getting shit done | tsers",
   siteTitleManifest: "tsers",
   siteUrl: "https://tse.rs",
   siteLanguage: "en",
